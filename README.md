@@ -2,13 +2,6 @@
 
 This repo is used to show how to connect an (existing) SageMaker Notebook to a new AWS Glue Development Endpoint.  In this example both the SageMaker Notebook and Glue Dev Endpoint reside in a Private subnet.  The `main.tf` script assumes you already have a VPC, Private Subnet, VPC endpoints, necessary IAM Role and an EC2 deployed to the same private subnet.  
 
-## TODO
-- [X] Determine Routing between the SG Notbeook and Glue Dev Endpoint (VPC Endpoints needed?)
-- [ ] Complete the Architecture Diagram
-- [ ] README: Complete the Steps for Creating the resources
-- [X] Determine if you can specify your own private/public key on the Glue Dev Endpoint.
-- [ ] Test it all out
-
 ## General Approach for attaching an existing SageMaker Notebook to a new Glue Dev Endpoint
 
 * Need to apply a similar lifecycle configuration as a notebook created from Glue 
