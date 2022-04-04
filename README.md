@@ -3,10 +3,10 @@
 This repo is used to show how to connect an (existing) SageMaker Notebook to a new AWS Glue Development Endpoint.  In this example both the SageMaker Notebook and Glue Dev Endpoint reside in a Private subnet.  The `main.tf` script assumes you already have a VPC, Private Subnet, VPC endpoints, necessary IAM Role and an EC2 deployed to the same private subnet.  
 
 ## TODO
-- [ ] Determine Routing between the SG Notbeook and Glue Dev Endpoint (VPC Endpoints needed?)
+- [X] Determine Routing between the SG Notbeook and Glue Dev Endpoint (VPC Endpoints needed?)
 - [ ] Complete the Architecture Diagram
 - [ ] README: Complete the Steps for Creating the resources
-- [ ] Determine if you can specify your own private/public key on the Glue Dev Endpoint.
+- [X] Determine if you can specify your own private/public key on the Glue Dev Endpoint.
 - [ ] Test it all out
 
 ## General Approach for attaching an existing SageMaker Notebook to a new Glue Dev Endpoint
@@ -110,11 +110,17 @@ terraform destroy
 ## Helpful Resources
 [Customize a Notebook Instance Using a Lifecycle Configuration Script](https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html)
 [GitHub SageMaker Notebook Instance Lifecycle Config Samples](https://github.com/aws-samples/amazon-sagemaker-notebook-instance-lifecycle-config-samples)
+[Required Ports for Dev Endpoint and Notebooks](https://docs.aws.amazon.com/glue/latest/dg/start-development-endpoint.html)
 
 AWSCLI Command to Describe Differences Between SageMaker Notebooks
 ```
 aws sagemaker describe-notebook-instance --notebook-instance-name aws-glue-tf-sm-notebook-instance
 aws sagemaker describe-notebook-instance --notebook-instance-name aws-glue-console-created-nb
+```
+
+AWSCLI Command to Download the Sagemaker S3 Assets
+```
+aws s3 cp s3://aws-glue-jes-prod-us-east-1-assets/sagemaker/assets/ . --recursive
 ```
 
 ## Questions & Comments
