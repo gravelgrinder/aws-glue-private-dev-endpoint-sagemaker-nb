@@ -2,6 +2,9 @@
 
 This repo is used to show how to connect an (existing) SageMaker Notebook to a new AWS Glue Development Endpoint.  In this example both the SageMaker Notebook and Glue Dev Endpoint reside in a Private subnet.  The `main.tf` script assumes you already have a VPC, Private Subnet, VPC endpoints, necessary IAM Role and an EC2 deployed to the same private subnet.  
 
+## Architecture
+![alt text](https://github.com/gravelgrinder/aws-glue-private-dev-endpoint-sagemaker-nb/blob/main/architecture-diagram.png?raw=true)
+
 ## General Approach for attaching an existing SageMaker Notebook to a new Glue Dev Endpoint
 
 * Need to apply a similar lifecycle configuration as a notebook created from Glue 
@@ -69,8 +72,6 @@ rm -rf "/home/ec2-user/glue/Miniconda2-4.5.12-Linux-x86_64.sh"
 sudo touch /home/ec2-user/glue_ready
 ```
 
-## Architecture
-![alt text](https://github.com/gravelgrinder/aws-glue-private-dev-endpoint-sagemaker-nb/blob/main/architecture-diagram.png?raw=true)
 
 ## Create Resources
 1. Run the following to Initialize the Terraform environment.
