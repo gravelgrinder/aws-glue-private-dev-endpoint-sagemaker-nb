@@ -120,6 +120,7 @@ aws sagemaker describe-notebook-instance --notebook-instance-name aws-glue-conso
 
 AWSCLI Command to Download the Sagemaker S3 Assets
 ```
+mkdir -p sagemaker/assets; cd sagemaker/assets
 aws s3 cp s3://aws-glue-jes-prod-us-east-1-assets/sagemaker/assets/ . --recursive
 ```
 
